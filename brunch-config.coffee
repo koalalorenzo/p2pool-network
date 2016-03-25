@@ -1,4 +1,8 @@
 exports.config =
+  jsWrapper: 'raw'
+  modules:
+    wrapper: false
+    definition: false
   files:
     javascripts:
       joinTo:
@@ -17,3 +21,6 @@ exports.config =
   plugins:
     coffeescript:
       bare: true
+      
+    copycat:
+      ".": "nodes.json"
