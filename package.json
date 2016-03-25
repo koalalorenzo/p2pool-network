@@ -9,9 +9,8 @@
   },
   "scripts": {
     "preinstall":"bower install -F",
-    "postinstall":"brunch build --production",
-    "start": "http-server ./public/ -c-1 -p $PORT",
-    "build": "brunch build --production"
+    "postinstall":"brunch build --debug",
+    "start": "http-server ./public/ -c-1 -p $PORT"
   },
   "dependencies": {
     "bower": "^1.7.7",
