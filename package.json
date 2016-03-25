@@ -9,7 +9,8 @@
   },
   "scripts": {
     "preinstall":"bower install -F",
-    "start": "brunch watch --server",
+    "postinstall":"brunch build --production",
+    "start": "brunch watch --server --port $PORT",
     "build": "brunch build --production"
   },
   "dependencies": {
