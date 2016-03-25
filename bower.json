@@ -1,0 +1,40 @@
+{
+  "name": "p2pool-network",
+  "homepage": "https://github.com/koalalorenzo/p2pool-network",
+  "authors": [
+    "Lorenzo Setale <lorenzo.setale@me.com>"
+  ],
+  "description": "Website that helps you choosing the best p2pool node near you",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "bitcoin",
+    "p2pool",
+    "mining",
+    "pool"
+  ],
+  "license": "GPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mui": "^0.4.7",
+    "angular": "^1.5.2",
+    "font-awesome": "^4.5.0",
+    "angular-route": "^1.5.2"
+  },
+  "overrides": {
+    "mui": {
+      "main": [
+        "packages/cdn/css/mui.min.css",
+        "packages/cdn/angular/mui-angular.min.js"
+      ]
+    }
+  }
+}
