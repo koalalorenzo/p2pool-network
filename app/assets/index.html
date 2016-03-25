@@ -69,6 +69,7 @@
               <th>Node Name</th>
               <th>Ping</th>
               <th>Fees</th>
+              <th>Score</th>
               <th>Address</th>
             </tr>
           </thead>
@@ -77,6 +78,7 @@
               <td>{{node.name}}</td>
               <td>{{pings[node.name]||0.00|number:2}}</td>
               <td>{{data[node.name].fee}}% + {{data[node.name].donation_proportion}}%</td>
+              <td>{{data[node.name].efficiency*100||0.00|number:2}}%</td>
               <td>{{node.domain}}:{{node.port}}</td>
             </tr>
           </tbody>
