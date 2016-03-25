@@ -24,3 +24,4 @@ exports.config =
       
     copycat:
       ".": "nodes.json"
+      "fonts": "bower_components/font-awesome/fonts/"

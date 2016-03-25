@@ -12,7 +12,8 @@
     "build": "brunch build --production"
   },
   "dependencies": {
-    "coffee-script-brunch": "^2.0.0"
+    "coffee-script-brunch": "^2.0.0",
+    "copycat-brunch": "^1.1.0"
   },
   "devDependencies": {
     "javascript-brunch": "^2.0.0",

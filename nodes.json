@@ -1,0 +1,44 @@
+[
+  {
+    "name": "p2pool.cloud Europe",
+    "domain": "eu.p2pool.cloud",
+    "port": "9332",
+    "contact": "Owner <info@p2pool.cloud>",
+    "url": "http://p2pool.cloud/"
+  },
+  {
+    "name": "p2pool.cloud USA",
+    "domain": "us.p2pool.cloud",
+    "port": "9332",
+    "contact": "Owner <info@p2pool.cloud>",
+    "url": "http://p2pool.cloud/"
+  },
+  {
+    "name": "p2pool.cloud ASIA",
+    "domain": "hk.p2pool.cloud",
+    "port": "9332",
+    "contact": "Owner <info@p2pool.cloud>",
+    "url": "http://p2pool.cloud/"
+  },
+  {
+    "name": "elizium.name",
+    "domain": "elizium.name",
+    "port": "9332",
+    "contact": "Owner <info@p2pool.cloud>",
+    "url": "http://p2pool.cloud/"
+  },
+  {
+    "name": "p2pool.lukav.com",
+    "domain": "p2pool.lukav.com",
+    "port": "9332",
+    "contact": "Owner <info@p2pool.cloud>",
+    "url": "http://p2pool.cloud/"
+  },
+  {
+    "name": "p2pool.611.to",
+    "domain": "p2pool.611.to",
+    "port": "9332",
+    "contact": "Owner <info@p2pool.cloud>",
+    "url": "http://p2pool.cloud/"
+  }
+]
