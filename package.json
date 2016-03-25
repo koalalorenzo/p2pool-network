@@ -8,6 +8,7 @@
     "url": ""
   },
   "scripts": {
+    "preinstall":"bower install -F",
     "start": "brunch watch --server",
     "build": "brunch build --production"
   },
