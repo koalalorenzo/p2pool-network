@@ -18,8 +18,8 @@
             <td class="mui--text-title"><a href="http://p2pool.network">P2Pool node scanner</a></td>
             <td align="right">
               <ul class="mui-list--inline mui--text-body2">
-                <li><a href="#">Start</a></li>
-                <!--<li><a href="#"><i class="fa fa-plus-circle"></i> Add your node</a></li>-->
+                <li><a ng-href="/">Start</a></li>
+                <li><a href="http://github.com/koalalorenzo/p2pool-network/HowToAddANode.md"><i class="fa fa-plus-circle"></i> Add your node</a></li>
                 <li><a href="http://github.com/koalalorenzo/p2pool-network">GitHub</a></li>
               </ul>
             </td>
@@ -46,44 +46,5 @@
     <script src="js/components.js"></script>
     <script src="js/app.js"></script>
 
-    <script type="text/ng-template" id="templates/index">
-      <div class="mui--text-center">
-        <div class="mui--appbar-height"></div>
-        <div class="mui--text-display3">Search for the best p2pool node</div>
-        <br>
-        <div class="mui--text-headline">
-          This tool is analyzing the bitcoin p2pool network<br>
-          to find the best node to start mining from your location</div>
-        <br>
-        <br>
-        <a href="#" class="mui-btn">Add your node</a>
-        <a href="#/search" class="mui-btn mui-btn--primary">Start searching</a>
-      </div>
-    </script>
-
-
-    <script type="text/ng-template" id="templates/searchTable">        
-        <table class="mui-table mui-table--bordered">
-          <thead>
-            <tr>
-              <th>Node Name</th>
-              <th>Ping</th>
-              <th>Fees</th>
-              <th>Score</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="node in nodes">
-              <td>{{node.name}}</td>
-              <td>{{pings[node.name]||0.00|number:2}}</td>
-              <td>{{data[node.name].fee}}% + {{data[node.name].donation_proportion}}%</td>
-              <td>{{data[node.name].efficiency*100||0.00|number:2}}%</td>
-              <td>{{node.domain}}:{{node.port}}</td>
-            </tr>
-          </tbody>
-        </table>
-        
-    </script>
   </body>
 </html>

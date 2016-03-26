@@ -1,0 +1,25 @@
+<table class="mui-table mui-table--bordered">
+  <thead>
+    <tr>
+      <th>Node Name</th>
+      <th>Ping</th>
+      <th>Fees</th>
+      <th>Score</th>
+      <th>Address</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="node in nodes">
+      <td>{{node.name}}</td>
+      <td>{{pings[node.name]||0.00|number:2}}</td>
+      <td>{{data[node.name].fee}}% + {{data[node.name].donation_proportion}}%</td>
+      <td>{{data[node.name].efficiency*100||0.00|number:2}}%</td>
+      <td>{{node.domain}}:{{node.port}}</td>
+      <td>
+        <a ng-href="#/nodes/{{node.domain}}:{{node.port}}">Info</a>
+        <a ng-show="node.url" ng-href="{{node.url}}" target="_blank">Website</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
