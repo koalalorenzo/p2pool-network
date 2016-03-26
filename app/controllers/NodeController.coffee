@@ -19,8 +19,8 @@ angular.module('P2poolNetwork').controller 'NodeController', [
     $scope.$watch 'local_stats', (->
       # When local_stats is update, check the calculate other values like:
       # hashrate, nodes connected etc...
-      if $scope.local_stats.miners_payout
-        $scope.node_miners_connected = Object.keys($scope.local_stats.miners_payout).length
+      if $scope.local_stats.miner_hash_rates
+        $scope.node_miners_connected = Object.keys($scope.local_stats.miner_hash_rates).length
       return
     ), true
     

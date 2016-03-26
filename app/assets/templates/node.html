@@ -1,6 +1,6 @@
+<div class="mui--appbar-height"></div>
 <!--Temporary view waiting for the nodes list -->
 <div class="mui--text-center" ng-hide="node">
-  <div class="mui--appbar-height"></div>
   <div class="mui--text-display2">
     Loading...
   </div>
@@ -19,54 +19,68 @@
 
 <!--The current view:-->
 <div ng-show="node">
-  <p ng-show="node.description">
-    {{node.description}}
-  </p>
+  <div class="mui-panel" ng-show="node.description">
+    <p>
+      {{node.description}}
+    </p>
+  </div>
+  <div class="mui-panel">
+    <table class="mui-table mui-table--bordered">
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td>{{node.name}}</td>
+        </tr>
 
-  <table class="mui-table mui-table--bordered">
-    <tbody>
-      <tr>
-        <td>Name:</td>
-        <td>{{node.name}}</td>
-      </tr>
+        <tr>
+          <td>Current Ping:</td>
+          <td>{{ping_value||0.00|number:2}}</td>
+        </tr>
 
-      <tr>
-        <td>Current Ping:</td>
-        <td>{{pings[node.name]||0.00|number:2}}</td>
-      </tr>
+        <tr>
+          <td>Efficiency:</td>
+          <td>{{local_stats.efficiency*100||0.00|number:2}}%</td>
+        </tr>
 
-      <tr>
-        <td>Efficiency:</td>
-        <td>{{local_stats.efficiency*100||0.00|number:2}}%</td>
-      </tr>
+        <tr>
+          <td>Fee + Donation:</td>
+          <td>{{local_stats.fee}}% + {{local_stats.donation_proportion}}%</td>
+        </tr>
 
-      <tr>
-        <td>Fee + Donation:</td>
-        <td>{{local_stats.fee}}% + {{local_stats.donation_proportion}}%</td>
-      </tr>
+        <tr>
+          <td>Node hashrate:</td>
+          <td>{{node_total_hashrate|hashrate}}</td>
+        </tr>
 
-      <tr>
-        <td>Node hashrate:</td>
-        <td>{{node_total_hashrate|hashrate}}</td>
-      </tr>
+        <tr>
+          <td>Miners connected:</td>
+          <td>{{node_miners_connected}}</td>
+        </tr>
 
-      <tr>
-        <td>Miners connected:</td>
-        <td>{{node_miners_connected}}</td>
-      </tr>
+        <tr>
+          <td>Connections:</td>
+          <td>
+            Out:{{local_stats.peers.outgoing||0}}<br>
+            In: {{local_stats.peers.incoming||0}}
+          </td>
+        </tr>
 
-      <tr>
-        <td>Connections:</td>
-        <td>{{node_miners_connected}}</td>
-      </tr>
+        <tr>
+          <td>Versions:</td>
+          <td>
+            Out:{{local_stats.version}}<br>
+            Protocol: {{local_stats.protocol_version||0}}
+          </td>
+        </tr>
 
-      <tr>
-        <td>Shares:</td>
-        <td>{{local_stats.shares.total||0}} (O:{{local_stats.shares.orphan||0}}, D:{{local_stats.shares.dead||0}})</td>
-      </tr>
+        <tr>
+          <td>Shares:</td>
+          <td>{{local_stats.shares.total||0}} (O:{{local_stats.shares.orphan||0}}, D:{{local_stats.shares.dead||0}})</td>
+        </tr>
 
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
   <br>
   <br>
   <div class="mui--text-center">
