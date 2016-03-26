@@ -24,7 +24,7 @@ angular.module('P2poolNetwork').controller 'SearchController', [
       return
 
     $scope.ping = (node) ->
-      # "Ping" a Node by making a HTTP call to the local stats and caclulate 
+      # "Ping" a Node by making a HTTP call to the local stats and caclulate
       # the difference of time. Note: this will trigger also the download of
       # the data/stats if the node is new.
 
@@ -42,7 +42,7 @@ angular.module('P2poolNetwork').controller 'SearchController', [
           $scope.pings[node.name] = (ping_timed + $scope.pings[node.name]) / 2
 
     $scope.download_stats = (node) ->
-      # "Ping" a Node by making a HTTP call to the local stats and caclulate 
+      # "Ping" a Node by making a HTTP call to the local stats and caclulate
       # the difference of time.
       base_url = 'http://' + node.domain + ':' + node.port + '/local_stats'
       $http.get(base_url).then (out) ->
@@ -58,7 +58,7 @@ angular.module('P2poolNetwork').controller 'SearchController', [
       if $scope.first_timer_counter >= 9
         clearInterval $scope.first_timer
     ), 1 * 1000)
- 
+
     # Now checking every 10 seconds.
     $scope.second_timer = setInterval((->
       $scope.ping_all()
