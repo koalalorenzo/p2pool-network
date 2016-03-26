@@ -4,18 +4,30 @@ angular.module('P2poolNetwork').controller 'NodeController', [
     $scope.nodes = []
     $scope.ping_value = -1
     $scope.node_access = $routeParams.access
-    $scope.current_node = {}
+    $scope.node = undefined
     $scope.local_stats = {}
-        
+    
+    $scope.node_miners_connected = 0
+    
+    $scope.$watch 'nodes', (->
+      # Extracting node from the URL provided
+      nodes_matching = $scope.nodes.filter (element)->
+        $scope.node_access is element.domain + ":" + element.port
+      $scope.node = nodes_matching[0]
+    ), true
+
+    $scope.$watch 'local_stats', (->
+      # When local_stats is update, check the calculate other values like:
+      # hashrate, nodes connected etc...
+      if $scope.local_stats.miners_payout
+        $scope.node_miners_connected = Object.keys($scope.local_stats.miners_payout).length
+      return
+    ), true
+    
     $scope.load_nodes = (cb=null) ->
       # Load the nodes available
       $http.get('nodes.json').then ((results) ->
         $scope.nodes = results.data
-
-        # Extracting current_node from the URL provided
-        nodes_matching = results.data.filter (element)->
-          $scope.node_access is element.domain + ":" + element.port
-        $scope.current_node = nodes_matching[0]
 
         cb() if cb
         return
@@ -50,12 +62,13 @@ angular.module('P2poolNetwork').controller 'NodeController', [
         $scope.local_stats = out.data
 
     $scope.load_nodes()
+    
     # Loading the timer that will ping the nodes every sec
     $scope.first_timer_counter = 0
     $scope.first_timer = setInterval((->
-      return if not $scope.current_node
+      return if not $scope.node
 
-      $scope.ping($scope.current_node) 
+      $scope.ping($scope.node) 
 
       $scope.first_timer_counter += 1
       if $scope.first_timer_counter >= 9
@@ -64,8 +77,8 @@ angular.module('P2poolNetwork').controller 'NodeController', [
  
     # Now checking every 15 seconds.
     $scope.second_timer = setInterval((->
-      return if not $scope.current_node
-      $scope.ping($scope.current_node) 
+      return if not $scope.node
+      $scope.ping($scope.node) 
     ), 15 * 1000)
     return
 ]

@@ -1,4 +1,5 @@
-<div class="mui--text-center" ng-hide="current_node">
+<!--Temporary view waiting for the nodes list -->
+<div class="mui--text-center" ng-hide="node">
   <div class="mui--appbar-height"></div>
   <div class="mui--text-display2">
     Loading...
@@ -14,4 +15,63 @@
   </p>
   <br>
   <a href="#/search" class="mui-btn">Go Back</a>
+</div>
+
+<!--The current view:-->
+<div ng-show="node">
+  <p ng-show="node.description">
+    {{node.description}}
+  </p>
+
+  <table class="mui-table mui-table--bordered">
+    <tbody>
+      <tr>
+        <td>Name:</td>
+        <td>{{node.name}}</td>
+      </tr>
+
+      <tr>
+        <td>Current Ping:</td>
+        <td>{{pings[node.name]||0.00|number:2}}</td>
+      </tr>
+
+      <tr>
+        <td>Efficiency:</td>
+        <td>{{local_stats.efficiency*100||0.00|number:2}}%</td>
+      </tr>
+
+      <tr>
+        <td>Fee + Donation:</td>
+        <td>{{local_stats.fee}}% + {{local_stats.donation_proportion}}%</td>
+      </tr>
+
+      <tr>
+        <td>Node hashrate:</td>
+        <td>{{node_total_hashrate|hashrate}}</td>
+      </tr>
+
+      <tr>
+        <td>Miners connected:</td>
+        <td>{{node_miners_connected}}</td>
+      </tr>
+
+      <tr>
+        <td>Connections:</td>
+        <td>{{node_miners_connected}}</td>
+      </tr>
+
+      <tr>
+        <td>Shares:</td>
+        <td>{{local_stats.shares.total||0}} (O:{{local_stats.shares.orphan||0}}, D:{{local_stats.shares.dead||0}})</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <div class="mui--text-center">
+    <a href="#/search" class="mui-btn">Go Back</a>
+    <a ng-show="node.url" ng-href="{{node.url}}" target="_blank" class="mui-btn mui-btn--primary">Visit the Website</a>
+    <a ng-href="http://{{node.domain}}:{{node.port}}/" target="_blank" class="mui-btn mui-btn--danger">Open P2Pool static page</a>
+  </div>
 </div>
