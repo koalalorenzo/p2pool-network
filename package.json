@@ -29,6 +29,6 @@
     "auto-reload-brunch": "^2.0.0"
   },
   "engines": {
-    "node" : ">=4.4 <5"
+    "node": "4.4.1"
   }
 }
