@@ -1,2 +1,3 @@
 # p2pool-network
-p2pool.network is a website that allows you to select the best p2pool node near you.
+This website helps you finding the best bitcoin mining node by showing and
+comparing the other important values.

@@ -1,11 +1,11 @@
 {
-  "name": "brunch-app",
-  "description": "Description",
-  "author": "Your Name",
+  "name": "p2pool-network",
+  "description": "This website helps you finding the best bitcoin mining node by showing and comparing the other important values.",
+  "author": "Lorenzo Setale",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/koalalorenzo/p2pool-network"
   },
   "scripts": {
     "preinstall": "bower install -F",
@@ -26,5 +26,8 @@
     "uglify-js-brunch": "^2.0.0",
     "clean-css-brunch": "^2.0.0",
     "auto-reload-brunch": "^2.0.0"
+  },
+  "engines": {
+    "node" : ">=4.4 <5"
   }
 }
