@@ -3,13 +3,13 @@
   "description": "This website helps you finding the best bitcoin mining node by showing and comparing the other important values.",
   "author": "Lorenzo Setale",
   "version": "0.1.0",
-  "license":"GPL-v3",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/koalalorenzo/p2pool-network"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install -F && ./node_modules/.bin/brunch build --debug",
+    "postinstall": "./node_modules/.bin/bower install -F && ./node_modules/.bin/brunch build --production",
     "start": "./node_modules/.bin/http-server ./public/ -c-1 -p $PORT"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "auto-reload-brunch": "^2.0.0"
   },
   "engines": {
-    "node": "4.4.1"
+    "node": "5.9.1",
+    "npm": "3.7.3"
   }
 }
