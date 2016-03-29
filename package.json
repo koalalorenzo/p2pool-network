@@ -3,6 +3,7 @@
   "description": "This website helps you finding the best bitcoin mining node by showing and comparing the other important values.",
   "author": "Lorenzo Setale",
   "version": "0.1.0",
+  "license":"GPL-v3",
   "repository": {
     "type": "git",
     "url": "https://github.com/koalalorenzo/p2pool-network"
