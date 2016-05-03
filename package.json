@@ -9,7 +9,7 @@
     "url": "https://github.com/koalalorenzo/p2pool-network"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install -F && ./node_modules/.bin/brunch build --production",
+    "postinstall": "./node_modules/.bin/bower install -F ; ./node_modules/.bin/brunch build --production",
     "start": "./node_modules/.bin/http-server ./public/ -c-1 -p $PORT"
   },
   "dependencies": {
