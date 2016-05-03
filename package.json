@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "bower": "^1.7.7",
-    "brunch": "^2.5.3",
+    "brunch": "2.6.6",
     "coffee-script-brunch": "^2.0.0",
     "coffeelint-brunch": "^2.0.0",
     "copycat-brunch": "^1.1.0",
