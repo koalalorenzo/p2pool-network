@@ -1,8 +1,5 @@
 exports.config =
   jsWrapper: 'raw'
-  modules:
-    wrapper: false
-    definition: false
 
   files:
     javascripts:
@@ -11,7 +8,7 @@ exports.config =
         'js/components.js': /^(bower_components)/
 
     stylesheets:
-      joinTo: 
+      joinTo:
         'css/app.css': /^(app)/
         'css/components.css': /^(bower_components)/
 
@@ -32,7 +29,7 @@ exports.config =
         max_line_length:
           value: 80
           level: "error"
-      
+
     copycat:
       ".": "nodes.json"
       "fonts": "bower_components/font-awesome/fonts/"
